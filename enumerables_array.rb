@@ -10,5 +10,13 @@ class Array
         self
     end
 
+    def my_select(&block)
+        array = []
+        self.my_each do |i|
+            array << i if block.call(i) 
+        end
+        # array << i if self.my_each {|i|  block.call(self[i]) }
+        array
+    end
 
 end
