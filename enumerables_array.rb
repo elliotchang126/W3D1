@@ -52,5 +52,19 @@ class Array
         end
         array
     end
+
+    def my_zip(*arrays)
+        array = []
+
+        self.each_with_index do |num, i|
+            small_array = []
+            small_array << num
+            arrays.each_with_index do |array, i2|
+                small_array << array[i]
+            end
+            array << small_array
+        end
+        array
+    end
     
 end
