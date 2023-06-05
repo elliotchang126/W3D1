@@ -82,4 +82,13 @@ class Array
         end
         self
     end
+
+    def my_join(string = '')
+        new_str = ""
+        self.each do |ele|
+            new_str += ele + string
+        end
+        new_str
+    end
+
 end
