@@ -19,4 +19,26 @@ class Array
         array
     end
 
+    def my_reject(&block)
+        array = []
+        self.my_each do |i|
+            array << i if !block.call(i) 
+        end
+        array
+    end
+
+    def my_any?(&block)
+        self.my_each do |i|
+            return true if block.call(i) 
+        end
+        false
+    end
+
+    def my_all?(&block)
+        self.my_each do |i|
+            return false if !block.call(i) 
+        end
+        true
+    end
+
 end
