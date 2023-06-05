@@ -66,5 +66,20 @@ class Array
         end
         array
     end
-    
+
+    def my_rotate(num=1)
+        # dbugger
+        if num > 0
+            num.times do 
+                ele = self.shift
+                self << ele
+            end
+        else
+            (-num).times do 
+                ele = self.pop
+                self.unshift(ele)
+            end
+        end
+        self
+    end
 end
