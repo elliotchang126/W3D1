@@ -91,4 +91,12 @@ class Array
         new_str
     end
 
+
+    def my_reverse
+        array = []
+        self.reverse_each do |ele|
+            array << ele
+        end
+        array
+    end
 end
