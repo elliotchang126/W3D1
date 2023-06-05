@@ -99,4 +99,26 @@ class Array
         end
         array
     end
+
+    def bubble_sort!(&prc)
+        sorted = false
+
+        while sorted == false
+            sorted = true
+            (0...self.length - 1).each do |idx|
+                if prc.call(self[idx], self[idx + 1]) > 0
+                   self[idx], self[idx + 1] = self[idx + 1], self[idx]
+                   sorted = false
+                end
+            end
+        end
+        self
+    end
+
+end
+
+def factor(num)
+    array = []
+    (0...num).each { |ele| array << ele if num % ele == 0 }
+    array
 end
