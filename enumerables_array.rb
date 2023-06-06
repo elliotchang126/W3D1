@@ -115,10 +115,28 @@ class Array
         self
     end
 
+    def bubble_sort(&prc)
+        self.dup.bubble_sort!(&prc)
+    end
+
+
+
 end
 
 def factor(num)
     array = []
     (0...num).each { |ele| array << ele if num % ele == 0 }
+    array
+end
+
+
+def substrings(string)
+    array = []
+    
+    string.each_char.with_index do |ele,idx1|
+        string.each_char.with_index do |ele2,idx2|
+            array << string[idx1..idx2] if idx1 <= idx2
+        end
+    end
     array
 end
