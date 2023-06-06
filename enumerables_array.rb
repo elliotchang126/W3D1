@@ -118,9 +118,6 @@ class Array
     def bubble_sort(&prc)
         self.dup.bubble_sort!(&prc)
     end
-
-
-
 end
 
 def factor(num)
@@ -139,4 +136,9 @@ def substrings(string)
         end
     end
     array
+end
+
+def subwords(word, dictionary)
+    array = substrings(word)
+    array.select { |str| dictionary.include?(str) }
 end
